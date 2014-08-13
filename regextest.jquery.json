@@ -1,0 +1,25 @@
+{
+  "name": "regextest",
+  "title": "Regextest",
+  "description": "The best jQuery plugin ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/i5ting/regtest",
+  "author": {
+    "email": "i5ting@126.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/i5ting/regtest.git"
+  },
+  "bugs": "https://github.com/i5ting/regtest/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/i5ting/regtest/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
