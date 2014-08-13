@@ -19,44 +19,33 @@
       notStrictEqual(actual, expected, [message])
       throws(block, [expected], [message])
   */
-
-  module('jQuery#regextest', {
+	
+  module('张婷正则测试', {
     // This will run before each test in this module.
     setup: function() {
-      this.elems = $('#qunit-fixture').children();
-    }
-  });
-
-  test('is chainable', function() {
-    expect(1);
-    // Not a bad test to run on collection methods.
-    strictEqual(this.elems.regextest(), this.elems, 'should be chainable');
-  });
-
-  test('is awesome', function() {
-    expect(1);
-    strictEqual(this.elems.regextest().text(), 'awesome0awesome1awesome2', 'should be awesome');
-  });
-
-  module('jQuery.regextest');
-
-  test('is awesome', function() {
-    expect(2);
-    strictEqual($.regextest(), 'awesome.', 'should be awesome');
-    strictEqual($.regextest({punctuation: '!'}), 'awesome!', 'should be thoroughly awesome');
-  });
-
-  module(':regextest selector', {
-    // This will run before each test in this module.
-    setup: function() {
-      this.elems = $('#qunit-fixture').children();
+      this.regex = /^0/g;
+			this.test_data_arr = [
+												'0','0.0','0.00'
+												,'.0','.00','.01','.11'
+												,'-1','-1.0','-1.00'
+												,'1','1.0','1.00'
+												,'0.1','0.01','0.11','0.10'
+											];
     }
   });
 
   test('is awesome', function() {
-    expect(1);
-    // Use deepEqual & .get() when comparing jQuery objects.
-    deepEqual(this.elems.filter(':regextest').get(), this.elems.last().get(), 'knows awesome when it sees it');
+		
+		// expect(this.test_data_arr.length);
+		
+		
+    $.each(this.test_data_arr,function(i){
+    	var i = this.match(/(^-{0,1}0.\d{1,2}$)|(^0$)|(^-{0,1}1(.0{1,2}){0,1})/g);
+			
+			ok(i, [this])
+    });
+		
+		
   });
 
 }(jQuery));
